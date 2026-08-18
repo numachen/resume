@@ -1046,6 +1046,34 @@ section {
   color: var(--accent-primary);
 }
 
+.contact-wechat {
+  align-items: flex-start;
+  cursor: default;
+}
+
+.contact-wechat:hover {
+  transform: none;
+}
+
+.wechat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.wechat-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.wechat-qr {
+  width: 132px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  display: block;
+}
+
 /* ========================================
    页脚
    ======================================== */

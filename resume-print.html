@@ -37,9 +37,29 @@
 
   /* ===== 页头 ===== */
   .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     border-bottom: 2px solid var(--ink);
     padding-bottom: 10px;
     margin-bottom: 14px;
+  }
+  .header-qr {
+    text-align: center;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .header-qr img {
+    width: 64px;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    display: block;
+  }
+  .header-qr-label {
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 3px;
   }
   .header .name {
     font-size: 26px;
@@ -218,9 +238,15 @@
 
   <!-- ============ 页头 ============ -->
   <header class="header">
-    <div class="name">陈文明</div>
-    <div class="tagline">在职，看新机会 · 36岁 · 男 · 本科 · 工作10年8个月</div>
-    <div class="contact">18788879076 ｜ 1484423781@qq.com</div>
+    <div class="header-left">
+      <div class="name">陈文明</div>
+      <div class="tagline">在职，看新机会 · 36岁 · 男 · 本科 · 工作10年8个月</div>
+      <div class="contact">1484423781@qq.com</div>
+    </div>
+    <div class="header-qr">
+      <img src="wechat.png" alt="微信二维码">
+      <div class="header-qr-label">微信</div>
+    </div>
   </header>
 
   <!-- ============ 优势亮点 ============ -->

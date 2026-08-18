@@ -57,5 +57,5 @@ google-chrome --headless=new --disable-gpu --no-pdf-header-footer \
 ## 联系方式
 
 - 📧 邮箱：1484423781@qq.com
-- 📱 电话：18788879076
+- 💬 微信：扫码添加（[查看二维码](./wechat.png)）
 - 🐙 GitHub：[@ZebraOps](https://github.com/ZebraOps)

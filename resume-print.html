@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陈文明的简历</title>
+<style>
+  :root {
+    --ink: #283850;          /* 主色：深灰蓝 */
+    --ink-2: #3a4a63;
+    --text: #2e3440;
+    --muted: #5c6779;
+    --line: #dfe5ec;
+    --bg-soft: #f5f7fa;
+    --bg-code: #f7f9fb;
+  }
+
+  @page {
+    size: A4;
+    margin: 13mm 12mm 14mm 12mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--text);
+    background: #fff;
+  }
+
+  /* ===== 页头 ===== */
+  .header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header .name {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 2px;
+  }
+  .header .tagline {
+    font-size: 12px;
+    color: var(--ink-2);
+    margin-top: 3px;
+  }
+  .header .contact {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ===== 章节 ===== */
+  .section { margin-bottom: 13px; }
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 1px;
+    border-left: 4px solid var(--ink);
+    padding-left: 8px;
+    margin-bottom: 7px;
+  }
+
+  /* ===== 优势亮点 ===== */
+  .highlights { padding-left: 2px; }
+  .highlight-item {
+    margin-bottom: 5px;
+    padding-left: 18px;
+    position: relative;
+    text-align: justify;
+  }
+  .highlight-item .idx {
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--ink);
+    font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  }
+
+  /* ===== 工作经历 ===== */
+  .job { margin-bottom: 11px; }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+  }
+  .job-head .company {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .job-head .role {
+    font-size: 11px;
+    color: var(--ink-2);
+    margin-left: 8px;
+    font-weight: 600;
+  }
+  .job-head .period {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  }
+  .job-block { margin-bottom: 5px; }
+  .job-block-title {
+    font-weight: 700;
+    color: var(--ink-2);
+    font-size: 11px;
+    margin-bottom: 2px;
+  }
+  .job ul { list-style: none; padding-left: 14px; }
+  .job li {
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 2px;
+    text-align: justify;
+  }
+  .job li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .job-block > ul > li::before { content: "–"; }
+
+  /* ===== 项目经历 ===== */
+  .project { margin-bottom: 11px; }
+  .project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+  }
+  .project-head .name { font-size: 12.5px; font-weight: 700; color: var(--ink); }
+  .project-head .role { font-size: 11px; color: var(--ink-2); margin-left: 8px; font-weight: 600; }
+  .project-head .period { font-size: 11px; color: var(--muted); white-space: nowrap; font-family: "JetBrains Mono", "SF Mono", Consolas, monospace; }
+  .project ul { list-style: none; padding-left: 14px; }
+  .project li { position: relative; padding-left: 10px; margin-bottom: 2px; text-align: justify; }
+  .project li::before { content: "·"; position: absolute; left: 0; color: var(--ink); font-weight: 700; }
+
+  .arch {
+    font-family: "JetBrains Mono", "SF Mono", Consolas, "Noto Sans Mono CJK SC", monospace;
+    font-size: 10px;
+    line-height: 1.55;
+    background: var(--bg-code);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 8px 10px;
+    margin: 6px 0;
+    color: var(--text);
+    white-space: pre;
+    overflow: hidden;
+  }
+
+  .techline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 5px 0 8px 0;
+  }
+  .techline .tag {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    color: var(--ink-2);
+    font-size: 10px;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  }
+
+  table { width: 100%; border-collapse: collapse; margin: 5px 0 8px 0; }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 4px 7px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 10.5px;
+  }
+  th { background: var(--bg-soft); color: var(--ink); font-weight: 700; }
+  td.proj { font-weight: 700; color: var(--ink-2); white-space: nowrap; }
+  td.tech { font-family: "JetBrains Mono", "SF Mono", Consolas, monospace; font-size: 10px; color: var(--muted); }
+
+  .rag-detail { margin-top: 4px; }
+  .rag-detail .rag-title { font-weight: 700; color: var(--ink-2); margin-bottom: 3px; }
+
+  /* ===== 教育 / 语言 ===== */
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .edu-row:last-child { border-bottom: none; }
+  .edu-row .school { font-weight: 600; color: var(--ink-2); }
+  .edu-row .major { color: var(--muted); margin-left: 8px; }
+  .edu-row .period { color: var(--muted); white-space: nowrap; font-family: "JetBrains Mono", "SF Mono", Consolas, monospace; }
+
+  .lang { color: var(--text); }
+</style>
+</head>
+<body>
+
+  <!-- ============ 页头 ============ -->
+  <header class="header">
+    <div class="name">陈文明</div>
+    <div class="tagline">在职，看新机会 · 36岁 · 男 · 本科 · 工作10年8个月</div>
+    <div class="contact">18788879076 ｜ 1484423781@qq.com</div>
+  </header>
+
+  <!-- ============ 优势亮点 ============ -->
+  <section class="section">
+    <div class="section-title">优势亮点</div>
+    <div class="highlights">
+      <div class="highlight-item"><span class="idx">1.</span>全栈开发能力：具备独立设计与开发企业级运维平台的经验，主导过微服务架构的完整落地</div>
+      <div class="highlight-item"><span class="idx">2.</span>Python / Go 双语言栈：精通 Python（Django / Flask / FastAPI），掌握 Go（Gin / go-zero），能根据场景选择合适技术栈</div>
+      <div class="highlight-item"><span class="idx">3.</span>AI Agent &amp; RAG 开发：掌握 LangChain / LangGraph Agent 开发框架，熟练使用 Claude、Hermes 等智能体，具备 RAG 知识库落地经验；基于 Hermes Agent 打造运维智能体与个人小助手，沉淀 Skill、MCP 化接入工具服务；能本地部署开源模型（llama.cpp / Ollama），将 AI 能力集成到运维场景</div>
+      <div class="highlight-item"><span class="idx">4.</span>云原生与 DevOps：熟练构建 CI/CD 流水线（Jenkins / GitLab CI / Tekton / Harbor），深入理解 Docker 与 Kubernetes，具备不可变基础设施的实战能力</div>
+      <div class="highlight-item"><span class="idx">5.</span>可观测性体系：擅长搭建 Prometheus + Grafana + SkyWalking 全栈监控，结合日志集中管理与告警体系，保障系统可观测性</div>
+      <div class="highlight-item"><span class="idx">6.</span>微服务架构设计：熟悉 Nacos 注册 / 配置中心、API 网关模式、JWT 认证与 RBAC 权限模型，有完整的微服务项目架构经验</div>
+    </div>
+  </section>
+
+  <!-- ============ 工作经历 ============ -->
+  <section class="section">
+    <div class="section-title">工作经历</div>
+
+    <div class="job">
+      <div class="job-head">
+        <span><span class="company">合肥企迈科技有限公司</span><span class="role">运维开发工程师</span></span>
+        <span class="period">2021/07 - 至今</span>
+      </div>
+      <div class="job-block">
+        <div class="job-block-title">1. 运维平台全栈开发与架构设计</div>
+        <ul>
+          <li>主导运维平台前后端开发，Vue.js + iView UI 组件化前端，Django / Flask 构建后端微服务，独立完成数据库设计、API 开发与 Swagger 文档自动化</li>
+          <li>推动平台从单体向微服务架构演进，提升系统可扩展性和模块复用率</li>
+        </ul>
+      </div>
+      <div class="job-block">
+        <div class="job-block-title">2. AI 应用落地与智能运维探索</div>
+        <ul>
+          <li>基于 Hermes Agent 打造运维智能体与个人小助手，将重复运维操作沉淀为可复用 Skill，MCP 化接入已有工具服务，提升运维自动化与智能化水平</li>
+          <li>学习并实践 LangChain、LangGraph Agent 开发框架，探索 AI Agent 在运维自动化场景的落地</li>
+          <li>本地部署开源大语言模型（llama.cpp / Ollama），熟练使用 Claude Code、Hermes 等智能体工具，实现智能日志分析、故障辅助定位等场景原型</li>
+          <li>开发 RAG 运维知识库系统，构建运维领域知识检索能力，为后续智能运维助手（Agent）做技术铺垫</li>
+        </ul>
+      </div>
+      <div class="job-block">
+        <div class="job-block-title">3. 可观测平台开发</div>
+        <ul>
+          <li>基于 Deepflow 开源社区二次开发，使用 go-zero 框架编写后端接口，代码零插桩实现服务内部运行状态可观测</li>
+          <li>结合 AI Agent 能力探索智能化告警分析与根因定位</li>
+        </ul>
+      </div>
+      <div class="job-block">
+        <div class="job-block-title">4. 云原生基础设施与 CI/CD</div>
+        <ul>
+          <li>负责 K8s 集群日常运维（节点管理、资源调度、服务发布、监控告警），制作和管理 Docker 镜像</li>
+          <li>搭建并维护 CI/CD 流水线（Jenkins、Harbor），实现代码自动化构建 / 测试 / 部署</li>
+          <li>配置 Grafana + Prometheus + SkyWalking 全栈监控，对服务器、应用、业务指标全方位覆盖</li>
+          <li>负责日志集中收集与管理，支撑故障快速定位</li>
+        </ul>
+      </div>
+      <div class="job-block">
+        <div class="job-block-title">5. 阿里云平台运维</div>
+        <ul>
+          <li>熟练运维 SLS、MQ、Kafka、ES、LB、OSS 等阿里云产品，持续优化性能与成本</li>
+          <li>管理阿里云镜像仓库，确保安全性与可用性</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span><span class="company">合肥智圣新创信息技术有限公司</span><span class="role">运维开发工程师</span></span>
+        <span class="period">2020/03 - 2021/07</span>
+      </div>
+      <ul>
+        <li>使用 Python 开发网络设备监控程序，通过 SNMP / UDP 协议获取设备运行参数并存入 MySQL；针对交换机 / 安全设备采用 UDP 协议优化性能消耗</li>
+        <li>基于 Django + DRF + ORM 开发后端 API，编写自动巡检程序</li>
+        <li>搭建 Linux + Nginx + uWSGI + Redis 服务环境，完成系统部署上线</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span><span class="company">安徽博约信息科技股份有限公司</span><span class="role">运维工程师</span></span>
+        <span class="period">2018/08 - 2020/03</span>
+      </div>
+      <ul>
+        <li>运维管理 120+ 节点 CentOS / Ubuntu 服务器集群，搭建 Zabbix + Prometheus + Grafana 全栈监控，实现 CPU / 内存 / 磁盘 / 服务状态多维度可视化</li>
+        <li>基于 Python 开发自动化运维工具集（日志轮转、批量配置、基础设施状态采集）</li>
+        <li>开发服务器健康监测系统，集成 SMTP / Telegram 告警通道，故障发现平均时间（MTTD）缩短至 3 分钟内</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span><span class="company">合肥乐维信息技术有限公司</span><span class="role">售后服务工程师</span></span>
+        <span class="period">2016/10 - 2018/08</span>
+      </div>
+      <ul>
+        <li>为客户提供软件售后技术支持，解决生产环境中各类使用问题</li>
+        <li>兼管公司桌面运维与网络故障处理</li>
+        <li>协助完成数据采集任务</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 项目经历 ============ -->
+  <section class="section">
+    <div class="section-title">项目经历</div>
+
+    <div class="project">
+      <div class="project-head">
+        <span><span class="name">斑马运维平台（ZebraOps）</span><span class="role">项目开源作者</span></span>
+        <span class="period">2025/01 - 至今</span>
+      </div>
+      <ul>
+        <li><strong>项目概述：</strong>ZebraOps 是一个"企业级、现代化、标准化"的开源运维技术生态，采用微服务架构，核心解决运维场景中"工具分散、流程不规范、上手门槛高"的痛点。目前包含 5 个子项目，覆盖权限管理、CI/CD、知识库与智能助手等运维核心领域。</li>
+      </ul>
+
+      <div class="arch">Browser [:4120] ──→ ZebraGateway [:4121] ── 统一入口 · JWT 认证 + 功能权限 + 动态路由
+                    ├── ZebraRBAC  [:4122] ── 通用 RBAC 权限管理
+                    ├── ZebraCICD  [:4123] ── CI/CD 全流程编排
+                    └── ZebraRAG   [:4124] ── 运维知识库 · 向量检索 + LLM 生成
+                      ↓
+                    Nacos [:8848] ── 服务注册发现 + 配置中心</div>
+
+      <div class="techline">
+        <span class="tag">PostgreSQL · 各服务独立数据库</span>
+        <span class="tag">Redis · Asynq 异步任务队列 + 缓存</span>
+        <span class="tag">Milvus / ES · 向量存储与全文检索</span>
+        <span class="tag">Prometheus + Grafana · 监控告警</span>
+        <span class="tag">外部集成 · GitLab / Jenkins / Harbor / K8s / Ollama</span>
+      </div>
+
+      <table>
+        <tr><th>子项目</th><th>技术栈</th><th>说明</th></tr>
+        <tr><td class="proj">ZebraAdmin</td><td class="tech">Vue.js + iView UI</td><td>企业级运维管理前端，响应式布局，动态路由，统一操作界面</td></tr>
+        <tr><td class="proj">ZebraGateway</td><td class="tech">Go + Gin</td><td>统一 API 网关，JWT 认证、功能权限校验、动态路由转发，对接 Nacos 实现服务发现</td></tr>
+        <tr><td class="proj">ZebraRBAC</td><td class="tech">FastAPI + SQLAlchemy</td><td>通用 RBAC 权限管理系统，用户 / 角色 / 权限 / 分组管理，支持多系统权限隔离</td></tr>
+        <tr><td class="proj">ZebraCICD</td><td class="tech">Go + Gin + Asynq</td><td>企业级 CI/CD 平台，异步任务队列，打通 GitLab → Jenkins → Harbor → K8s 完整部署链路</td></tr>
+        <tr><td class="proj">ZebraRAG</td><td class="tech">LangChain + FastAPI + Milvus / ES</td><td>运维知识库系统，文档向量化 + 语义检索 + LLM 生成回答，为 ZebraAgent 智能运维助手提供知识底座</td></tr>
+      </table>
+
+      <div class="rag-detail">
+        <div class="rag-title">ZebraRAG 详细介绍：</div>
+        <ul>
+          <li>构建运维领域知识库，将运维文档、工单记录、故障案例等非结构化数据通过 Embedding 向量化存入 Milvus / ES，实现语义级检索</li>
+          <li>基于 LangChain 搭建 RAG 流程：用户提问 → 向量检索召回相关文档 → LLM 结合上下文生成回答，解决运维场景中"知识分散、查找低效"的痛点</li>
+          <li>支持多种 LLM 后端（Ollama 本地模型 / 云端 API），可灵活切换满足不同隐私与成本需求</li>
+          <li>为后续 ZebraAgent 运维智能助手储备知识检索能力——Agent 通过 ZebraRAG 获取运维上下文，再结合工具调用（告警查询、日志分析、部署触发）实现智能化运维协作</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span><span class="name">CODO 全栈开发</span><span class="role">运维开发工程师</span></span>
+        <span class="period">2021/08 - 2025/03</span>
+      </div>
+      <ul>
+        <li>CODO 为多混合云、一站式 DevOps 自动化运维开源平台，微服务架构，前端 Vue + iView，后端 Python + Tornado</li>
+        <li>基于开源代码完成公司运维平台定制化二次开发，快速落地业务需求</li>
+        <li>基于 Docker / K8s 实现业务快速部署</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span><span class="name">智尊保运维系统</span><span class="role">自动化运维开发工程师</span></span>
+        <span class="period">2020/03 - 2020/08</span>
+      </div>
+      <ul>
+        <li>设计并构建系统数据库表关系模型</li>
+        <li>使用 Python 开发网络设备监控与自动巡检程序，基于 Django + DRF + ORM 开发后端 API</li>
+        <li>搭建 Linux + Nginx + uWSGI + Redis 生产环境并完成系统上线</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 教育经历 ============ -->
+  <section class="section">
+    <div class="section-title">教育经历</div>
+    <div class="edu-row"><span><span class="school">池州学院</span><span class="major">机械制造与自动化 · 本科</span></span><span class="period">2013/09 - 2015/07</span></div>
+    <div class="edu-row"><span><span class="school">安徽机电职业技术学院</span><span class="major">材料科学与工程（视光材料与应用方向）· 大专</span></span><span class="period">2010/01 - 2013/01</span></div>
+  </section>
+
+  <!-- ============ 语言能力 ============ -->
+  <section class="section">
+    <div class="section-title">语言能力</div>
+    <div class="lang">普通话</div>
+  </section>
+
+</body>
+</html>

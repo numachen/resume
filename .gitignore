@@ -1,0 +1,10 @@
+# 本地工作目录（PDF 备份与中间产物）
+.pdfwork/
+
+# Claude Code 本地配置
+.claude/
+
+# 开发过程笔记（不随简历仓库发布）
+task_plan.md
+progress.md
+findings.md

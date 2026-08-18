@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陈文明 | 运维开发 / AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 动态背景 -->
+  <div class="bg-canvas" id="bgCanvas"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-content">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">CM</span>
+        <span class="logo-dot"></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about"><span>01.</span>关于</a></li>
+        <li><a href="#skills"><span>02.</span>技能</a></li>
+        <li><a href="#projects"><span>03.</span>项目</a></li>
+        <li><a href="#experience"><span>04.</span>经历</a></li>
+        <li><a href="#contact"><span>05.</span>联系</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- 关于 - Hero Section -->
+    <section class="hero" id="about">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>在职 · 10年经验 · 看新机会</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="name-line">陈文明</span>
+        </h1>
+        <div class="hero-title-wrapper">
+          <h2 class="hero-title">运维开发 <span class="title-separator">/</span> AI Engineer</h2>
+        </div>
+        <div class="hero-tags">
+          <span class="hero-tag">☁️ 云原生 & 微服务</span>
+          <span class="hero-tag">🤖 AI Agent / RAG</span>
+          <span class="hero-tag">⚡ 自动化运维</span>
+          <span class="hero-tag">📊 可观测性</span>
+        </div>
+        <p class="hero-summary">
+          全栈运维开发工程师，10年运维经验，<span class="highlight">Python / Go 双语言栈</span>。<br>
+          独立构建企业级运维平台，主导微服务架构落地。<br>
+          近一年深耕 <span class="highlight">AI Agent & RAG</span>，探索 LLM 在智能运维场景的落地。
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            <span>联系我</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#projects" class="btn btn-secondary">查看项目</a>
+        </div>
+
+        <!-- 滚动提示 -->
+        <div class="scroll-indicator">
+          <span>Scroll to explore</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+
+      <!-- 右侧装饰 - 终端 -->
+      <div class="hero-visual">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">zebraops@terminal</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">whoami</span>
+            </div>
+            <div class="terminal-output">
+              DevOps Engineer | AI Agent Builder | Open Source Author
+            </div>
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">cat ~/skills.json | jq .core</span>
+            </div>
+            <div class="terminal-output">
+              <span class="skill-term">Python/FastAPI</span>, <span class="skill-term">Go/Gin</span>, <span class="skill-term">Vue.js</span>, <span class="skill-term">Kubernetes</span>
+            </div>
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">cat ~/skills.json | jq .ai</span>
+            </div>
+            <div class="terminal-output">
+              <span class="skill-term">LangChain</span>, <span class="skill-term">LangGraph</span>, <span class="skill-term">RAG</span>, <span class="skill-term">Hermes Agent</span>, <span class="skill-term">MCP</span>
+            </div>
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">echo $STATUS</span>
+            </div>
+            <div class="terminal-output">
+              <span class="success">✓</span> Building ZebraOps — 开源运维生态
+            </div>
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="cursor">█</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 技能部分 -->
+    <section class="skills" id="skills">
+      <div class="section-header">
+        <span class="section-number">02.</span>
+        <h2 class="section-title">技能专长</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-grid">
+        <!-- 编程语言 & 框架 -->
+        <div class="skill-card" data-category="language">
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="skill-card-title">编程语言 & 框架</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Python (Django / Flask / FastAPI)</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="92%"></div>
+              </div>
+              <span class="skill-bar-value">Expert</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Go (Gin / go-zero)</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="78%"></div>
+              </div>
+              <span class="skill-bar-value">Proficient</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Vue.js + iView UI</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="75%"></div>
+              </div>
+              <span class="skill-bar-value">Proficient</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI & LLM -->
+        <div class="skill-card" data-category="ai">
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+              </svg>
+            </div>
+            <h3 class="skill-card-title">AI & LLM</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">LangChain / LangGraph</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="75%"></div>
+              </div>
+              <span class="skill-bar-value">Proficient</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">RAG / Agent 开发</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="72%"></div>
+              </div>
+              <span class="skill-bar-value">Proficient</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Ollama / llama.cpp (本地部署)</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="70%"></div>
+              </div>
+              <span class="skill-bar-value">Proficient</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Hermes Agent / Skill 沉淀 / MCP 接入</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="78%"></div>
+              </div>
+              <span class="skill-bar-value">Proficient</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 容器 & 云原生 -->
+        <div class="skill-card" data-category="containers">
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="skill-card-title">容器 & 云原生</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Kubernetes</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="88%"></div>
+              </div>
+              <span class="skill-bar-value">Advanced</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Docker</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="90%"></div>
+              </div>
+              <span class="skill-bar-value">Advanced</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Nacos (注册 & 配置中心)</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="78%"></div>
+              </div>
+              <span class="skill-bar-value">Proficient</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CI/CD -->
+        <div class="skill-card" data-category="cicd">
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="23 4 23 10 17 10"/>
+                <polyline points="1 20 1 14 7 14"/>
+                <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+              </svg>
+            </div>
+            <h3 class="skill-card-title">CI/CD & DevOps</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Jenkins</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="90%"></div>
+              </div>
+              <span class="skill-bar-value">Advanced</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">GitLab CI / Tekton</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="82%"></div>
+              </div>
+              <span class="skill-bar-value">Advanced</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Harbor (镜像仓库)</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="80%"></div>
+              </div>
+              <span class="skill-bar-value">Proficient</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 监控 & 可观测 -->
+        <div class="skill-card" data-category="observability">
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <h3 class="skill-card-title">监控 & 可观测性</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Prometheus + Grafana</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="90%"></div>
+              </div>
+              <span class="skill-bar-value">Advanced</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">SkyWalking (APM)</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="80%"></div>
+              </div>
+              <span class="skill-bar-value">Proficient</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">ELK / 日志平台</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="82%"></div>
+              </div>
+              <span class="skill-bar-value">Advanced</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 云平台 -->
+        <div class="skill-card" data-category="cloud">
+          <div class="skill-card-header">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/>
+              </svg>
+            </div>
+            <h3 class="skill-card-title">云平台 & 中间件</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">阿里云 (SLS / MQ / Kafka / ES / LB / OSS)</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="85%"></div>
+              </div>
+              <span class="skill-bar-value">Advanced</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">PostgreSQL</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="82%"></div>
+              </div>
+              <span class="skill-bar-value">Advanced</span>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-bar-label">Redis / Nginx</span>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="85%"></div>
+              </div>
+              <span class="skill-bar-value">Advanced</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 项目经历 -->
+    <section class="projects" id="projects">
+      <div class="section-header">
+        <span class="section-number">03.</span>
+        <h2 class="section-title">项目经历</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="project-list">
+        <!-- 项目 1: ZebraOps -->
+        <article class="project-card featured">
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-category">开源项目 · 微服务架构</span>
+              <span class="project-period">2025/01 - 至今</span>
+            </div>
+            <h3 class="project-title">斑马运维平台 · ZebraOps</h3>
+            <p class="project-desc">
+              <strong>定位</strong>：企业级开源运维技术生态，采用微服务架构，解决运维场景中"工具分散、流程不规范、上手门槛高"的痛点。<br>
+              <strong>架构</strong>：ZebraGateway (Go/Gin) 统一入口 + Nacos 注册中心，ZebraRBAC (FastAPI) 权限管理，ZebraCICD (Go/Gin+Asynq) 持续交付，ZebraRAG (LangChain+FastAPI+Milvus) 运维知识库。<br>
+              <strong>核心价值</strong>：从认证鉴权 → CI/CD 编排 → 知识检索，覆盖运维全链路，全部 <span class="metric">开源</span>。
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>5 子项目：Admin / Gateway / RBAC / CICD / RAG，各服务独立数据库 + 独立部署</span>
+              </div>
+              <div class="highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>ZebraRAG：运维文档向量化 + 语义检索，对接 Ollama 本地模型，为智能运维助手铺路</span>
+              </div>
+              <div class="highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>技术栈：Python (FastAPI) + Go (Gin/go-zero) + Vue.js + Nacos + PostgreSQL + Redis + Prometheus</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span>FastAPI</span>
+              <span>Go / Gin</span>
+              <span>Vue.js</span>
+              <span>Nacos</span>
+              <span>LangChain</span>
+              <span>Milvus</span>
+              <span>PostgreSQL</span>
+              <span>Redis</span>
+              <span>Docker</span>
+              <span>K8s</span>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="project-image">
+              <div class="k8s-visual">
+                <div class="k8s-center">ZebraOps</div>
+                <div class="k8s-pod pod-1"></div>
+                <div class="k8s-pod pod-2"></div>
+                <div class="k8s-pod pod-3"></div>
+                <div class="k8s-pod pod-4"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 项目 2: CODO -->
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-category">DevOps 平台 · 二次开发</span>
+              <span class="project-period">2021/08 - 2025/03</span>
+            </div>
+            <h3 class="project-title">CODO 全栈开发</h3>
+            <p class="project-desc">
+              <strong>背景</strong>：CODO 是多混合云、一站式 DevOps 自动化运维开源平台，微服务架构，前端 Vue + iView，后端 Python + Tornado。<br>
+              <strong>工作</strong>：基于开源代码完成公司运维平台定制化二次开发，快速落地业务需求；基于 Docker/K8s 实现业务快速部署。<br>
+              <strong>成果</strong>：完成运维平台从 <span class="metric">0 到 1</span> 的定制化搭建，支撑公司日常运维管理。
+            </p>
+            <div class="project-tech">
+              <span>Vue.js</span>
+              <span>iView</span>
+              <span>Python</span>
+              <span>Tornado</span>
+              <span>Docker</span>
+              <span>Kubernetes</span>
+              <span>MySQL</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 项目 3: 智尊保 -->
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-category">网络监控 · 自动化运维</span>
+              <span class="project-period">2020/03 - 2020/08</span>
+            </div>
+            <h3 class="project-title">智尊保运维系统</h3>
+            <p class="project-desc">
+              <strong>背景</strong>：公司网络安全设备、交换机、服务器缺乏统一监控，日常巡检依赖人工。<br>
+              <strong>行动</strong>：设计系统数据库表关系模型；使用 Python 开发监控程序，通过 SNMP/UDP 协议获取设备运行参数，编写自动巡检程序；基于 Django + DRF + ORM 开发后端 API。<br>
+              <strong>成果</strong>：实现网络设备运行状态自动化监控与巡检，<span class="metric">替代人工巡检</span>，提升运维效率。
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>Django</span>
+              <span>DRF</span>
+              <span>MySQL</span>
+              <span>Nginx</span>
+              <span>uWSGI</span>
+              <span>Redis</span>
+              <span>SNMP</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 工作经历 -->
+    <section class="experience" id="experience">
+      <div class="section-header">
+        <span class="section-number">04.</span>
+        <h2 class="section-title">工作经历</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">运维开发工程师</h3>
+                <p class="timeline-company">合肥企迈科技有限公司 · 合肥</p>
+              </div>
+              <span class="timeline-period">2021/07 - 至今</span>
+            </div>
+            <ul class="timeline-desc">
+              <li>主导运维平台全栈开发与微服务架构演进（Vue.js + Django/Flask）</li>
+              <li>基于 Deepflow + go-zero 开发可观测平台，实现零插桩服务状态观测</li>
+              <li>探索 AI Agent 在运维场景落地：LangChain / LangGraph + RAG 知识库</li>
+              <li>基于 Hermes Agent 打造运维智能体与个人小助手：沉淀重复操作流程为 Skill，MCP 化接入已有工具服务，提升运维自动化与智能化水平</li>
+              <li>负责 K8s 集群运维、CI/CD 流水线维护、阿里云平台管理</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">运维开发工程师</h3>
+                <p class="timeline-company">合肥智圣新创信息技术有限公司 · 合肥</p>
+              </div>
+              <span class="timeline-period">2020/03 - 2021/07</span>
+            </div>
+            <ul class="timeline-desc">
+              <li>Python 开发网络设备监控与自动巡检程序（SNMP/UDP）</li>
+              <li>基于 Django + DRF + ORM 开发后端 API</li>
+              <li>搭建 Linux + Nginx + uWSGI + Redis 生产环境并完成系统上线</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">运维工程师</h3>
+                <p class="timeline-company">安徽博约信息科技股份有限公司 · 合肥</p>
+              </div>
+              <span class="timeline-period">2018/08 - 2020/03</span>
+            </div>
+            <ul class="timeline-desc">
+              <li>管理 120+ 节点服务器集群，搭建 Zabbix + Prometheus + Grafana 全栈监控</li>
+              <li>Python 开发自动化运维工具集（日志轮转、批量配置、健康监测）</li>
+              <li>故障发现 MTTD 缩短至 3 分钟内（SMTP / Telegram 告警）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">售后服务工程师</h3>
+                <p class="timeline-company">合肥乐维信息技术有限公司 · 合肥</p>
+              </div>
+              <span class="timeline-period">2016/10 - 2018/08</span>
+            </div>
+            <ul class="timeline-desc">
+              <li>软件售后技术支持 + 公司桌面/网络运维</li>
+              <li>数据采集与处理任务</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="contact" id="contact">
+      <div class="section-header">
+        <span class="section-number">05.</span>
+        <h2 class="section-title">联系方式</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-content">
+        <div class="contact-main">
+          <h3 class="contact-title">Let's Connect</h3>
+          <p class="contact-desc">
+            对运维开发、AI Agent 落地、开源项目感兴趣？<br>
+            欢迎交流合作。
+          </p>
+          <a href="mailto:1484423781@qq.com" class="contact-email">
+            1484423781@qq.com
+          </a>
+        </div>
+
+        <div class="contact-links">
+          <a href="tel:+86-18788879076" class="contact-link-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <span>187 8887 9076</span>
+          </a>
+          <a href="https://github.com/ZebraOps" target="_blank" class="contact-link-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
+            <span>GitHub</span>
+          </a>
+          <a href="mailto:1484423781@qq.com" class="contact-link-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <span>Email</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 陈文明</p>
+      <div class="footer-design">
+        <span>Designed & Built with</span>
+        <span class="heart">♥</span>
+        <span>in Hefei</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

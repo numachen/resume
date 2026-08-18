@@ -11,7 +11,7 @@
 [![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)](https://prometheus.io/)
 [![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
 
-[🖥 在线预览](https://zebraops.github.io/resume/) · [📄 下载 PDF](./陈文明的简历.pdf) · [🐙 GitHub](https://github.com/ZebraOps)
+[🖥 在线预览](https://www.zops.org.cn/) · [📄 下载 PDF](./陈文明的简历.pdf) · [🐙 GitHub](https://github.com/ZebraOps)
 
 ## 关于我
 
